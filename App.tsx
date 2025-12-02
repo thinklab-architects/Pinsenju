@@ -298,9 +298,9 @@ const App: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-serif text-gray-600 tracking-[0.2em] md:tracking-[0.3em] uppercase mb-6 bg-white/80 px-6 py-2 rounded-full backdrop-blur-md shadow-sm border border-white/50"
           >
-            <span>City Center</span>
+            <span>潮州</span>
             <span className="w-1.5 h-1.5 bg-green-600 rounded-full" />
-            <span>Taiwan</span>
+            <span>屏東</span>
           </motion.div>
 
           {/* Main Title */}
