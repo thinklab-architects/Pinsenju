@@ -380,7 +380,7 @@ const App: React.FC = () => {
                 {[
                   { icon: Sun, title: '自然共生', desc: '與陽光、微風、綠意共處的日常。' },
                   { icon: TreePine, title: '垂直森林', desc: '層層疊翠的陽台植栽，淨化空氣與心靈。' },
-                  { icon: Home, title: '智慧人居', desc: '結合現代科技與人性化設計的舒適空間。' },
+                  { icon: Home, title: '人本居住', desc: '結合自然與人性化設計的舒適空間。' },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -440,7 +440,7 @@ const App: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { name: '透天別墅', type: 'Townhouse', size: '78 坪', price: 'Type A' },
-              { name: '電梯豪邸', type: 'Villa w/ Elevator', size: '108 坪', price: 'Type B' },
+              { name: '電梯豪邸', type: 'NATURE VILLA', size: '108 坪', price: 'Type B' },
               { name: 'VIP 賞屋', type: 'Private Tour', size: '專人導覽', price: 'Exclusive' },
             ].map((plan, i) => {
               const isSent = bookingStatus === 'sent';
