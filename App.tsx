@@ -13,6 +13,7 @@ import GradientText from './components/GlitchText';
 import CustomCursor from './components/CustomCursor';
 import FeatureCard from './components/ArtistCard'; // Reusing as FeatureCard
 import AIChat from './components/AIChat';
+import ImageGallery from './components/ImageGallery';
 import { PropertyFeature } from './types';
 
 // Images
@@ -79,6 +80,8 @@ const App: React.FC = () => {
   const [selectedFeature, setSelectedFeature] = useState<PropertyFeature | null>(null);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
   const [currentLifestyleIndex, setCurrentLifestyleIndex] = useState(0);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [galleryStartIndex, setGalleryStartIndex] = useState(0);
 
   const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
@@ -392,7 +395,10 @@ const App: React.FC = () => {
             </div>
 
             <div className="lg:col-span-7 relative h-[500px] md:h-[700px] w-full order-1 lg:order-2">
-              <div className="relative h-full w-full overflow-hidden shadow-2xl">
+              <div className="relative h-full w-full overflow-hidden shadow-2xl cursor-pointer" onClick={() => {
+                setGalleryStartIndex(currentLifestyleIndex);
+                setIsGalleryOpen(true);
+              }}>
                 <AnimatePresence mode="popLayout">
                   <motion.img
                     key={currentLifestyleIndex}
@@ -402,7 +408,7 @@ const App: React.FC = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.5 }}
                     alt="Interior Lifestyle"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[2s] hover:scale-105"
                   />
                 </AnimatePresence>
 
@@ -589,6 +595,12 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <ImageGallery
+        images={HERO_IMAGES}
+        isOpen={isGalleryOpen}
+        startIndex={galleryStartIndex}
+        onClose={() => setIsGalleryOpen(false)}
+      />
     </div>
   );
 };
