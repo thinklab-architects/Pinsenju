@@ -446,24 +446,6 @@ const App: React.FC = () => {
                   { icon: MapPin, text: '建坪 37.65 坪' },
                   { icon: MapPin, text: '地坪 24.91 坪' },
                   { icon: Car, text: '私人雙車' },
-                  { icon: TreePine, text: '景觀露台' },
-                  { icon: Sun, text: '前後採光' },
-                  { icon: Home, text: '即刻入住' }
-                ]
-              },
-              {
-                name: '花園別墅',
-                type: 'NATURE VILLA',
-                features: [
-                  { icon: MapPin, text: '建坪 108 坪' },
-                  { icon: Car, text: '私人雙車位' },
-                  { icon: TreePine, text: '景觀露台' }
-                ]
-              },
-              {
-                name: 'VIP 賞屋',
-                type: 'Private Tour',
-                features: [
                   { icon: MapPin, text: '專人導覽' },
                   { icon: Car, text: '專屬停車' },
                   { icon: TreePine, text: '深度體驗' }
