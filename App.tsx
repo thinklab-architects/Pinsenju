@@ -19,11 +19,11 @@ import { PropertyFeature } from './types';
 // Images
 import heroDay1 from './images/日景A1.png';
 import heroNight1 from './images/夜景A1.png';
-import heroDay2 from './images/日景B1.png';
 import heroNight2 from './images/夜景B1.png';
 import heroDayB4 from './images/日景B4.png';
 
 import featureGeo from './images/日景A2.png';
+import featureGeoB3 from './images/日景B3.png';
 import featureGarden from './images/露臺1.png';
 import featureLight from './images/日景B2.png';
 import featureRooftop from './images/露臺2.png';
@@ -37,7 +37,7 @@ const FEATURES: PropertyFeature[] = [
     title: '幾何美學',
     subtitle: 'Modern Geometry',
     tag: 'Exterior',
-    image: featureGeo,
+    image: featureGeoB3,
     description: '純粹的幾何線條，勾勒出當代建築的力度。白色量體與光影交織，展現極簡主義的深邃內涵。'
   },
   {
