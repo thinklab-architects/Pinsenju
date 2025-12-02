@@ -15,6 +15,19 @@ import FeatureCard from './components/ArtistCard'; // Reusing as FeatureCard
 import AIChat from './components/AIChat';
 import { PropertyFeature } from './types';
 
+// Images
+import heroDay1 from './images/日景A1.png';
+import heroNight1 from './images/夜景A1.png';
+import heroDay2 from './images/日景B1.png';
+import heroNight2 from './images/夜景B1.png';
+
+import featureGeo from './images/日景A2.png';
+import featureGarden from './images/露臺1.png';
+import featureLight from './images/日景B2.png';
+import featureRooftop from './images/露臺2.png';
+
+import lifestyleNight from './images/夜景B3.png';
+
 // Real Estate Data
 const FEATURES: PropertyFeature[] = [
   {
@@ -22,7 +35,7 @@ const FEATURES: PropertyFeature[] = [
     title: '幾何美學',
     subtitle: 'Modern Geometry',
     tag: 'Exterior',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop',
+    image: featureGeo,
     description: '純粹的幾何線條，勾勒出當代建築的力度。白色量體與光影交織，展現極簡主義的深邃內涵。'
   },
   {
@@ -30,7 +43,7 @@ const FEATURES: PropertyFeature[] = [
     title: '層疊綠意',
     subtitle: 'Vertical Garden',
     tag: 'Nature',
-    image: 'https://images.unsplash.com/photo-1596634863264-b6a64f51c726?q=80&w=1000&auto=format&fit=crop',
+    image: featureGarden,
     description: '戶戶規劃寬敞露台，將自然綠意垂直延伸。每一次呼吸，都是芬多精的洗禮。'
   },
   {
@@ -38,7 +51,7 @@ const FEATURES: PropertyFeature[] = [
     title: '極致採光',
     subtitle: 'Natural Light',
     tag: 'Interior',
-    image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop',
+    image: featureLight,
     description: '大面落地窗設計，引進充沛自然光線。室內外界線消弭，空間更顯開闊通透。'
   },
   {
@@ -46,16 +59,16 @@ const FEATURES: PropertyFeature[] = [
     title: '空中花園',
     subtitle: 'Rooftop Lounge',
     tag: 'Lifestyle',
-    image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop',
+    image: featureRooftop,
     description: '頂樓空中花園，盡覽城市天際線。是晨間瑜伽或夜間小酌的最佳場域。'
   }
 ];
 
 const HERO_IMAGES = [
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2000&auto=format&fit=crop"
+  heroDay1,
+  heroNight1,
+  heroDay2,
+  heroNight2
 ];
 
 const App: React.FC = () => {
@@ -372,7 +385,7 @@ const App: React.FC = () => {
             <div className="lg:col-span-7 relative h-[500px] md:h-[700px] w-full order-1 lg:order-2">
               <div className="relative h-full w-full overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1000&auto=format&fit=crop"
+                  src={lifestyleNight}
                   alt="Interior Lifestyle"
                   className="h-full w-full object-cover transition-transform duration-[2s] hover:scale-105"
                 />
