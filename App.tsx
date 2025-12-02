@@ -21,6 +21,7 @@ import heroDay1 from './images/日景A1.png';
 import heroNight1 from './images/夜景A1.png';
 import heroDay2 from './images/日景B1.png';
 import heroNight2 from './images/夜景B1.png';
+import heroDayB4 from './images/日景B4.png';
 
 import featureGeo from './images/日景A2.png';
 import featureGarden from './images/露臺1.png';
@@ -66,10 +67,10 @@ const FEATURES: PropertyFeature[] = [
 ];
 
 const HERO_IMAGES = [
-  heroDay1,
-  heroNight1,
-  heroDay2,
-  heroNight2
+  heroDayB4,   // 日景B4
+  heroNight2,  // 夜景B1
+  featureLight, // 日景B2
+  heroNight1   // 夜景A1
 ];
 
 const App: React.FC = () => {
