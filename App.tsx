@@ -30,6 +30,7 @@ import featureRooftop from './images/露臺2.png';
 
 import lifestyleNight from './images/夜景B3.png';
 import nightA2 from './images/夜景A2.png';
+import logo from './images/logo.png';
 
 // Real Estate Data
 const FEATURES: PropertyFeature[] = [
@@ -178,10 +179,10 @@ const App: React.FC = () => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-12 py-6 bg-white/70 backdrop-blur-md border-b border-white/20">
-        <div className="font-heading text-xl md:text-2xl font-bold tracking-widest text-gray-900 cursor-default z-50 uppercase flex items-center gap-2">
-          <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-zen rounded-sm">品</div>
-          <span className="font-cormorant font-bold">PIN SEN JU</span>
-        </div>
+        <a href="https://www.yuandevelopment.com/" target="_blank" rel="noopener noreferrer" className="font-heading text-xl md:text-2xl font-bold tracking-widest text-gray-900 cursor-pointer z-50 uppercase flex items-center gap-3">
+          <img src={logo} alt="YUAN DEVELOPMENT" className="h-10 w-auto" />
+          <span className="font-cormorant font-bold">YUAN DEVELOPMENT</span>
+        </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-12 text-xs font-bold tracking-[0.2em] uppercase text-gray-600">
@@ -518,10 +519,10 @@ const App: React.FC = () => {
       <footer className="relative z-10 border-t border-gray-200 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
           <div>
-            <div className="font-heading text-3xl font-bold tracking-widest mb-6 text-gray-900 flex items-center gap-2">
-              <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-zen text-lg rounded-sm">品</div>
-              <span className="font-cormorant">PIN SEN JU</span>
-            </div>
+            <a href="https://www.yuandevelopment.com/" target="_blank" rel="noopener noreferrer" className="font-heading text-3xl font-bold tracking-widest mb-6 text-gray-900 flex items-center gap-3">
+              <img src={logo} alt="YUAN DEVELOPMENT" className="h-10 w-auto" />
+              <span className="font-cormorant">YUAN DEVELOPMENT</span>
+            </a>
             <address className="not-italic text-gray-500 space-y-2 text-sm font-light">
               <p className="flex items-center gap-3">
                 <MapPin className="w-4 h-4" />
