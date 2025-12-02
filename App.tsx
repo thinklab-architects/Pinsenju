@@ -466,6 +466,27 @@ const App: React.FC = () => {
                   { icon: Home, text: '即刻入住' }
                 ]
               },
+              {
+                name: '花園別墅',
+                type: 'NATURE VILLA',
+                features: [
+                  { icon: MapPin, text: '建坪 48.03 坪' },
+                  { icon: MapPin, text: '地坪 36.83 坪' },
+                  { icon: Car, text: '私人雙車' },
+                  { icon: TreePine, text: '景觀大露台' },
+                  { icon: Sun, text: '三面採光' },
+                  { icon: Home, text: '即刻入住' }
+                ]
+              },
+              {
+                name: 'VIP 賞屋',
+                type: 'Private Tour',
+                features: [
+                  { icon: MapPin, text: '專人導覽' },
+                  { icon: Car, text: '專屬停車' },
+                  { icon: TreePine, text: '深度體驗' }
+                ]
+              },
             ].map((plan, i) => {
               const isSent = bookingStatus === 'sent';
               const isSending = bookingStatus === 'sending';
