@@ -439,8 +439,8 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: '透天別墅', type: 'Townhouse', size: '78 坪', price: 'Type A' },
-              { name: '電梯豪邸', type: 'NATURE VILLA', size: '108 坪', price: 'Type B' },
+              { name: '微風透天', type: 'Townhouse', size: '78 坪', price: 'Type A' },
+              { name: '花園別墅', type: 'NATURE VILLA', size: '108 坪', price: 'Type B' },
               { name: 'VIP 賞屋', type: 'Private Tour', size: '專人導覽', price: 'Exclusive' },
             ].map((plan, i) => {
               const isSent = bookingStatus === 'sent';
