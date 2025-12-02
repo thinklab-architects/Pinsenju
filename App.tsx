@@ -29,6 +29,7 @@ import featureLight from './images/日景B2.png';
 import featureRooftop from './images/露臺2.png';
 
 import lifestyleNight from './images/夜景B3.png';
+import nightA2 from './images/夜景A2.png';
 
 // Real Estate Data
 const FEATURES: PropertyFeature[] = [
@@ -73,6 +74,20 @@ const HERO_IMAGES = [
   heroNight1   // 夜景A1
 ];
 
+const GALLERY_IMAGES = [
+  heroDayB4,    // 日景B4
+  heroNight2,   // 夜景B1
+  featureLight, // 日景B2
+  heroNight1,   // 夜景A1
+  heroDay1,     // 日景A1
+  featureGeo,   // 日景A2
+  featureGeoB3, // 日景B3
+  featureGarden,// 露臺1
+  featureRooftop,// 露臺2
+  lifestyleNight,// 夜景B3
+  nightA2       // 夜景A2
+];
+
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -114,7 +129,7 @@ const App: React.FC = () => {
   // Auto-play lifestyle slider
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentLifestyleIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+      setCurrentLifestyleIndex((prev) => (prev + 1) % GALLERY_IMAGES.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -406,7 +421,7 @@ const App: React.FC = () => {
                 <AnimatePresence mode="popLayout">
                   <motion.img
                     key={currentLifestyleIndex}
-                    src={HERO_IMAGES[currentLifestyleIndex]}
+                    src={GALLERY_IMAGES[currentLifestyleIndex]}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -612,7 +627,7 @@ const App: React.FC = () => {
         )}
       </AnimatePresence>
       <ImageGallery
-        images={HERO_IMAGES}
+        images={GALLERY_IMAGES}
         isOpen={isGalleryOpen}
         startIndex={galleryStartIndex}
         onClose={() => setIsGalleryOpen(false)}
