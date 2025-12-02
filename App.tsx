@@ -52,7 +52,7 @@ const FEATURES: PropertyFeature[] = [
     id: '3',
     title: '極致採光',
     subtitle: 'Natural Light',
-    tag: 'Interior',
+    tag: 'WIND/LIGHT',
     image: featureLight,
     description: '大面落地窗設計，引進充沛自然光線。室內外界線消弭，空間更顯開闊通透。'
   },
