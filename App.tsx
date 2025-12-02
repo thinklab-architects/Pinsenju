@@ -78,6 +78,7 @@ const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedFeature, setSelectedFeature] = useState<PropertyFeature | null>(null);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+  const [currentLifestyleIndex, setCurrentLifestyleIndex] = useState(0);
 
   const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
@@ -103,6 +104,14 @@ const App: React.FC = () => {
     const timer = setInterval(() => {
       nextHeroSlide();
     }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Auto-play lifestyle slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentLifestyleIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -384,13 +393,20 @@ const App: React.FC = () => {
 
             <div className="lg:col-span-7 relative h-[500px] md:h-[700px] w-full order-1 lg:order-2">
               <div className="relative h-full w-full overflow-hidden shadow-2xl">
-                <img
-                  src={lifestyleNight}
-                  alt="Interior Lifestyle"
-                  className="h-full w-full object-cover transition-transform duration-[2s] hover:scale-105"
-                />
+                <AnimatePresence mode="popLayout">
+                  <motion.img
+                    key={currentLifestyleIndex}
+                    src={HERO_IMAGES[currentLifestyleIndex]}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.5 }}
+                    alt="Interior Lifestyle"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </AnimatePresence>
 
-                <div className="absolute bottom-0 left-0 bg-white/90 backdrop-blur-md p-8 md:p-12 max-w-md">
+                <div className="absolute bottom-0 left-0 bg-white/90 backdrop-blur-md p-8 md:p-12 max-w-md z-10">
                   <p className="font-zen text-2xl italic text-gray-800">"家，是心靈的歸屬，是安放靈魂的容器。"</p>
                 </div>
               </div>
