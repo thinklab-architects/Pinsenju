@@ -161,7 +161,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen text-gray-800 selection:bg-[#dcfce7] selection:text-green-900 cursor-auto md:cursor-none overflow-x-hidden font-serif">
+    <div
+      className="relative min-h-screen text-gray-800 selection:bg-[#dcfce7] selection:text-green-900 cursor-auto md:cursor-none overflow-x-hidden font-serif"
+      onContextMenu={(e) => e.preventDefault()}
+    >
       <CustomCursor />
       <FluidBackground />
       <AIChat />
