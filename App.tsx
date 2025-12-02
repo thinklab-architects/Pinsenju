@@ -439,9 +439,36 @@ const App: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: '微風透天', type: 'Townhouse', size: '78 坪', price: 'Type A' },
-              { name: '花園別墅', type: 'NATURE VILLA', size: '108 坪', price: 'Type B' },
-              { name: 'VIP 賞屋', type: 'Private Tour', size: '專人導覽', price: 'Exclusive' },
+              {
+                name: '微風透天',
+                type: 'Townhouse',
+                features: [
+                  { icon: MapPin, text: '建坪 37.65 坪' },
+                  { icon: MapPin, text: '地坪 24.91 坪' },
+                  { icon: Car, text: '私人雙車' },
+                  { icon: TreePine, text: '景觀露台' },
+                  { icon: Sun, text: '前後採光' },
+                  { icon: Home, text: '即刻入住' }
+                ]
+              },
+              {
+                name: '花園別墅',
+                type: 'NATURE VILLA',
+                features: [
+                  { icon: MapPin, text: '建坪 108 坪' },
+                  { icon: Car, text: '私人雙車位' },
+                  { icon: TreePine, text: '景觀露台' }
+                ]
+              },
+              {
+                name: 'VIP 賞屋',
+                type: 'Private Tour',
+                features: [
+                  { icon: MapPin, text: '專人導覽' },
+                  { icon: Car, text: '專屬停車' },
+                  { icon: TreePine, text: '深度體驗' }
+                ]
+              },
             ].map((plan, i) => {
               const isSent = bookingStatus === 'sent';
               const isSending = bookingStatus === 'sending';
@@ -458,9 +485,12 @@ const App: React.FC = () => {
                     <h3 className="text-3xl font-zen font-medium mb-6 text-gray-900">{plan.name}</h3>
                     <div className="w-12 h-px bg-gray-300 mb-8" />
                     <ul className="space-y-4 text-gray-600 font-light">
-                      <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-gray-400" /> 建坪 {plan.size}</li>
-                      <li className="flex items-center gap-3"><Car className="w-4 h-4 text-gray-400" /> 私人雙車位</li>
-                      <li className="flex items-center gap-3"><TreePine className="w-4 h-4 text-gray-400" /> 景觀露台</li>
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-3">
+                          <feature.icon className="w-4 h-4 text-gray-400" />
+                          {feature.text}
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
