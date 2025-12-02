@@ -540,20 +540,23 @@ const App: React.FC = () => {
               <span className="font-cormorant">PIN SEN JU</span>
             </div>
             <address className="not-italic text-gray-500 space-y-2 text-sm font-light">
-              <p className="flex items-center gap-3"><MapPin className="w-4 h-4" /> 台灣省台南市中西區...</p>
-              <p className="flex items-center gap-3"><Phone className="w-4 h-4" /> (06) 234-5678</p>
-              <p className="flex items-center gap-3"><Mail className="w-4 h-4" /> sales@pinsenju.tw</p>
+              <p className="flex items-center gap-3">
+                <MapPin className="w-4 h-4" />
+                <a href="https://maps.app.goo.gl/zWFNwJdhkA6Ts2Fk7" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">
+                  920屏東縣潮州鎮光復路一段28巷
+                </a>
+              </p>
+              <p className="flex items-center gap-3"><Phone className="w-4 h-4" /> (08) 766-2066</p>
             </address>
           </div>
 
           <div className="flex gap-8">
-            <a href="#" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Facebook</a>
-            <a href="#" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Instagram</a>
-            <a href="#" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Line</a>
+            <a href="https://www.facebook.com/DONGYUAN.DEVELOPMENT" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Facebook</a>
+            <a href="https://www.instagram.com/yuandevelopment/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Instagram</a>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-200 text-center md:text-left">
-          <p className="text-xs text-gray-400 font-cormorant">© 2025 品森居 Pin Sen Ju. All rights reserved. 網頁設計僅供示意。</p>
+          <p className="text-xs text-gray-400 font-cormorant">© 2025 品森居 Pin Sen Ju. All rights reserved. THINKLAB ARCHITECTS DESIGN</p>
         </div>
       </footer>
 
