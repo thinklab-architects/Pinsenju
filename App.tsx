@@ -17,35 +17,35 @@ import { PropertyFeature } from './types';
 
 // Real Estate Data
 const FEATURES: PropertyFeature[] = [
-  { 
-    id: '1', 
-    title: '幾何美學', 
-    subtitle: 'Modern Geometry', 
-    tag: 'Exterior', 
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop', 
+  {
+    id: '1',
+    title: '幾何美學',
+    subtitle: 'Modern Geometry',
+    tag: 'Exterior',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop',
     description: '純粹的幾何線條，勾勒出當代建築的力度。白色量體與光影交織，展現極簡主義的深邃內涵。'
   },
-  { 
-    id: '2', 
-    title: '層疊綠意', 
-    subtitle: 'Vertical Garden', 
-    tag: 'Nature', 
-    image: 'https://images.unsplash.com/photo-1596634863264-b6a64f51c726?q=80&w=1000&auto=format&fit=crop', 
+  {
+    id: '2',
+    title: '層疊綠意',
+    subtitle: 'Vertical Garden',
+    tag: 'Nature',
+    image: 'https://images.unsplash.com/photo-1596634863264-b6a64f51c726?q=80&w=1000&auto=format&fit=crop',
     description: '戶戶規劃寬敞露台，將自然綠意垂直延伸。每一次呼吸，都是芬多精的洗禮。'
   },
-  { 
-    id: '3', 
-    title: '極致採光', 
-    subtitle: 'Natural Light', 
-    tag: 'Interior', 
-    image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop', 
+  {
+    id: '3',
+    title: '極致採光',
+    subtitle: 'Natural Light',
+    tag: 'Interior',
+    image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop',
     description: '大面落地窗設計，引進充沛自然光線。室內外界線消弭，空間更顯開闊通透。'
   },
-  { 
-    id: '4', 
-    title: '空中花園', 
-    subtitle: 'Rooftop Lounge', 
-    tag: 'Lifestyle', 
+  {
+    id: '4',
+    title: '空中花園',
+    subtitle: 'Rooftop Lounge',
+    tag: 'Lifestyle',
     image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1000&auto=format&fit=crop',
     description: '頂樓空中花園，盡覽城市天際線。是晨間瑜伽或夜間小酌的最佳場域。'
   }
@@ -65,7 +65,7 @@ const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedFeature, setSelectedFeature] = useState<PropertyFeature | null>(null);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-  
+
   const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
   // Handle keyboard navigation
@@ -134,25 +134,25 @@ const App: React.FC = () => {
   const prevHeroSlide = () => {
     setCurrentHeroIndex((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
   };
-  
+
   return (
     <div className="relative min-h-screen text-gray-800 selection:bg-[#dcfce7] selection:text-green-900 cursor-auto md:cursor-none overflow-x-hidden font-serif">
       <CustomCursor />
       <FluidBackground />
       <AIChat />
-      
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 md:px-12 py-6 bg-white/70 backdrop-blur-md border-b border-white/20">
         <div className="font-heading text-xl md:text-2xl font-bold tracking-widest text-gray-900 cursor-default z-50 uppercase flex items-center gap-2">
-           <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-zen rounded-sm">品</div>
-           <span className="font-cormorant font-bold">PIN SEN JU</span>
+          <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-zen rounded-sm">品</div>
+          <span className="font-cormorant font-bold">PIN SEN JU</span>
         </div>
-        
+
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-12 text-xs font-bold tracking-[0.2em] uppercase text-gray-600">
           {['Features', 'Lifestyle', 'Contact'].map((item) => (
-            <button 
-              key={item} 
+            <button
+              key={item}
               onClick={() => scrollToSection(item.toLowerCase())}
               className="hover:text-black transition-colors cursor-pointer bg-transparent border-none relative group"
               data-hover="true"
@@ -162,7 +162,7 @@ const App: React.FC = () => {
             </button>
           ))}
         </div>
-        <button 
+        <button
           onClick={() => scrollToSection('contact')}
           className="hidden md:inline-block border border-gray-900 px-8 py-3 text-xs font-bold tracking-widest uppercase hover:bg-gray-900 hover:text-white transition-all duration-300 text-gray-900 cursor-pointer bg-transparent"
           data-hover="true"
@@ -171,11 +171,11 @@ const App: React.FC = () => {
         </button>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="md:hidden text-gray-900 z-50 relative w-10 h-10 flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-           {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? <X /> : <Menu />}
         </button>
       </nav>
 
@@ -197,7 +197,7 @@ const App: React.FC = () => {
                 {item}
               </button>
             ))}
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
               className="mt-8 bg-gray-900 text-white px-12 py-4 text-sm font-bold tracking-widest uppercase"
             >
@@ -211,25 +211,25 @@ const App: React.FC = () => {
       <header className="relative h-[100svh] min-h-[600px] flex flex-col items-center justify-center overflow-hidden px-4">
         {/* Carousel Background */}
         <div className="absolute inset-0 z-[-1] overflow-hidden bg-gray-200">
-           <AnimatePresence mode="popLayout">
-             <motion.img 
-               key={currentHeroIndex}
-               src={HERO_IMAGES[currentHeroIndex]}
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 0.9 }}
-               exit={{ opacity: 0 }}
-               transition={{ duration: 1.5, ease: "easeInOut" }}
-               className="absolute inset-0 w-full h-full object-cover"
-               alt="Pin Sen Ju Atmosphere"
-             />
-           </AnimatePresence>
-           
-           <div className="absolute inset-0 bg-white/40" />
-           <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/10" />
+          <AnimatePresence mode="popLayout">
+            <motion.img
+              key={currentHeroIndex}
+              src={HERO_IMAGES[currentHeroIndex]}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.9 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover"
+              alt="Pin Sen Ju Atmosphere"
+            />
+          </AnimatePresence>
+
+          <div className="absolute inset-0 bg-white/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/10" />
         </div>
 
         {/* Navigation Arrows */}
-        <button 
+        <button
           onClick={prevHeroSlide}
           className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-gray-900/10 flex items-center justify-center hover:bg-white/80 hover:scale-105 transition-all duration-300 backdrop-blur-sm group"
           aria-label="Previous Slide"
@@ -238,7 +238,7 @@ const App: React.FC = () => {
           <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-gray-900" />
         </button>
 
-        <button 
+        <button
           onClick={nextHeroSlide}
           className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-gray-900/10 flex items-center justify-center hover:bg-white/80 hover:scale-105 transition-all duration-300 backdrop-blur-sm group"
           aria-label="Next Slide"
@@ -259,11 +259,11 @@ const App: React.FC = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           style={{ y, opacity }}
           className="z-10 text-center flex flex-col items-center w-full max-w-6xl pb-24 md:pb-20"
         >
-           {/* Date / Location */}
+          {/* Date / Location */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -271,25 +271,25 @@ const App: React.FC = () => {
             className="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-serif text-gray-600 tracking-[0.2em] md:tracking-[0.3em] uppercase mb-6 bg-white/80 px-6 py-2 rounded-full backdrop-blur-md shadow-sm border border-white/50"
           >
             <span>City Center</span>
-            <span className="w-1.5 h-1.5 bg-green-600 rounded-full"/>
+            <span className="w-1.5 h-1.5 bg-green-600 rounded-full" />
             <span>Taiwan</span>
           </motion.div>
 
           {/* Main Title */}
           <div className="relative w-full flex flex-col justify-center items-center">
             <h1 className="text-[12vw] md:text-[8vw] leading-[1] font-bold tracking-wide text-gray-900 drop-shadow-sm font-zen">
-                品 森 居
+              品 森 居
             </h1>
             <p className="text-xl md:text-3xl font-light tracking-[0.5em] text-gray-700 mt-4 uppercase font-cormorant">
-                PIN SEN JU
+              PIN SEN JU
             </p>
           </div>
-          
+
           <motion.div
-             initial={{ scaleX: 0 }}
-             animate={{ scaleX: 1 }}
-             transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
-             className="w-24 h-1 bg-gray-900 mt-8 mb-8"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
+            className="w-24 h-1 bg-gray-900 mt-8 mb-8"
           />
 
           <motion.p
@@ -298,48 +298,29 @@ const App: React.FC = () => {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-lg md:text-xl font-serif text-gray-800 leading-loose max-w-lg mx-auto text-center"
           >
-            森呼吸 · 心居所<br/>
+            森呼吸 · 心居所<br />
             <span className="text-sm md:text-base text-green-800 font-bold tracking-[0.2em] mt-3 block uppercase font-cormorant">
               LIVING IN THE WOODS!
             </span>
           </motion.p>
         </motion.div>
 
-        {/* MARQUEE */}
-        <div className="absolute bottom-12 left-0 w-full py-4 bg-gray-900 text-white z-20 overflow-hidden">
-          <motion.div 
-            className="flex w-fit will-change-transform"
-            animate={{ x: "-50%" }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          >
-            {[0, 1].map((key) => (
-              <div key={key} className="flex whitespace-nowrap shrink-0 items-center">
-                {[...Array(4)].map((_, i) => (
-                  <span key={i} className="text-2xl font-cormorant font-light px-8 flex items-center gap-8 tracking-widest">
-                    LIVING IN THE WOODS! <span className="text-gray-500 text-xl">✦</span> 
-                    URBAN SANCTUARY <span className="text-gray-500 text-xl">✦</span> 
-                    品森居 <span className="text-gray-500 text-xl">✦</span>
-                  </span>
-                ))}
-              </div>
-            ))}
-          </motion.div>
-        </div>
+
       </header>
 
       {/* FEATURES SECTION */}
       <section id="features" className="relative z-10 py-20 md:py-32 bg-white">
         <div className="max-w-[1600px] mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 px-4 border-b border-gray-200 pb-8">
-             <div>
-                <span className="text-green-800 font-bold tracking-widest uppercase text-sm mb-2 block font-cormorant">Architecture & Design</span>
-                <h2 className="text-4xl md:text-6xl font-zen font-medium text-gray-900">
-                  建築美學
-                </h2>
-             </div>
-             <p className="max-w-md text-gray-500 mt-4 md:mt-0 leading-relaxed font-light">
-               融合現代幾何與自然元素，打造會呼吸的建築。每一處細節，都體現了對生活的極致追求。
-             </p>
+            <div>
+              <span className="text-green-800 font-bold tracking-widest uppercase text-sm mb-2 block font-cormorant">Architecture & Design</span>
+              <h2 className="text-4xl md:text-6xl font-zen font-medium text-gray-900">
+                建築美學
+              </h2>
+            </div>
+            <p className="max-w-md text-gray-500 mt-4 md:mt-0 leading-relaxed font-light">
+              融合現代幾何與自然元素，打造會呼吸的建築。每一處細節，都體現了對生活的極致追求。
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-gray-200">
@@ -360,12 +341,12 @@ const App: React.FC = () => {
             <div className="lg:col-span-5 order-2 lg:order-1">
               <span className="text-gray-500 font-bold tracking-widest uppercase text-xs mb-4 block font-cormorant">The Experience</span>
               <h2 className="text-4xl md:text-6xl font-zen font-medium mb-8 text-gray-900 leading-tight">
-                生活 <br/> <GradientText text="質感體驗" className="text-5xl md:text-7xl font-zen" />
+                生活 <br /> <GradientText text="質感體驗" className="text-5xl md:text-7xl font-zen" />
               </h2>
               <p className="text-lg text-gray-600 mb-12 font-serif leading-relaxed">
                 品森居不僅是一座建築，更是一種生活態度。位於城市靜巷，隔絕喧囂，讓您在繁忙過後，回歸最純粹的寧靜。
               </p>
-              
+
               <div className="space-y-8">
                 {[
                   { icon: Sun, title: '自然共生', desc: '與陽光、微風、綠意共處的日常。' },
@@ -373,7 +354,7 @@ const App: React.FC = () => {
                   { icon: Home, title: '智慧人居', desc: '結合現代科技與人性化設計的舒適空間。' },
                 ].map((item, i) => (
                   <div
-                    key={i} 
+                    key={i}
                     className="flex items-start gap-6 group"
                   >
                     <div className="p-4 rounded-full bg-white border border-gray-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -390,14 +371,14 @@ const App: React.FC = () => {
 
             <div className="lg:col-span-7 relative h-[500px] md:h-[700px] w-full order-1 lg:order-2">
               <div className="relative h-full w-full overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Interior Lifestyle" 
-                  className="h-full w-full object-cover transition-transform duration-[2s] hover:scale-105" 
+                <img
+                  src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1000&auto=format&fit=crop"
+                  alt="Interior Lifestyle"
+                  className="h-full w-full object-cover transition-transform duration-[2s] hover:scale-105"
                 />
-                
+
                 <div className="absolute bottom-0 left-0 bg-white/90 backdrop-blur-md p-8 md:p-12 max-w-md">
-                   <p className="font-zen text-2xl italic text-gray-800">"家，是心靈的歸屬，是安放靈魂的容器。"</p>
+                  <p className="font-zen text-2xl italic text-gray-800">"家，是心靈的歸屬，是安放靈魂的容器。"</p>
                 </div>
               </div>
             </div>
@@ -409,14 +390,14 @@ const App: React.FC = () => {
       <section id="contact" className="relative z-10 py-20 md:py-32 px-4 md:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-             <h2 className="text-4xl md:text-6xl font-zen font-medium text-gray-900 mb-4">
-               預約賞屋
-             </h2>
-             <p className="text-gray-500 font-cormorant uppercase tracking-widest text-sm md:text-base">
-               Reserve Your Private Tour
-             </p>
+            <h2 className="text-4xl md:text-6xl font-zen font-medium text-gray-900 mb-4">
+              預約賞屋
+            </h2>
+            <p className="text-gray-500 font-cormorant uppercase tracking-widest text-sm md:text-base">
+              Reserve Your Private Tour
+            </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { name: '透天別墅', type: 'Townhouse', size: '78 坪', price: 'Type A' },
@@ -443,14 +424,14 @@ const App: React.FC = () => {
                       <li className="flex items-center gap-3"><TreePine className="w-4 h-4 text-gray-400" /> 景觀露台</li>
                     </ul>
                   </div>
-                  
-                  <button 
+
+                  <button
                     onClick={handleBooking}
                     disabled={isSent || isSending}
                     className={`w-full py-4 text-sm font-bold uppercase tracking-[0.2em] border border-gray-900 transition-all duration-300 mt-10
-                      ${isSent 
-                        ? 'bg-green-700 text-white border-green-700 cursor-default' 
-                        : isSending 
+                      ${isSent
+                        ? 'bg-green-700 text-white border-green-700 cursor-default'
+                        : isSending
                           ? 'bg-gray-100 text-gray-400 cursor-wait'
                           : 'bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white'
                       }`}
@@ -467,17 +448,17 @@ const App: React.FC = () => {
       <footer className="relative z-10 border-t border-gray-200 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12">
           <div>
-             <div className="font-heading text-3xl font-bold tracking-widest mb-6 text-gray-900 flex items-center gap-2">
-                <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-zen text-lg rounded-sm">品</div>
-                <span className="font-cormorant">PIN SEN JU</span>
-             </div>
-             <address className="not-italic text-gray-500 space-y-2 text-sm font-light">
-               <p className="flex items-center gap-3"><MapPin className="w-4 h-4" /> 台灣省台南市中西區...</p>
-               <p className="flex items-center gap-3"><Phone className="w-4 h-4" /> (06) 234-5678</p>
-               <p className="flex items-center gap-3"><Mail className="w-4 h-4" /> sales@pinsenju.tw</p>
-             </address>
+            <div className="font-heading text-3xl font-bold tracking-widest mb-6 text-gray-900 flex items-center gap-2">
+              <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-zen text-lg rounded-sm">品</div>
+              <span className="font-cormorant">PIN SEN JU</span>
+            </div>
+            <address className="not-italic text-gray-500 space-y-2 text-sm font-light">
+              <p className="flex items-center gap-3"><MapPin className="w-4 h-4" /> 台灣省台南市中西區...</p>
+              <p className="flex items-center gap-3"><Phone className="w-4 h-4" /> (06) 234-5678</p>
+              <p className="flex items-center gap-3"><Mail className="w-4 h-4" /> sales@pinsenju.tw</p>
+            </address>
           </div>
-          
+
           <div className="flex gap-8">
             <a href="#" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Facebook</a>
             <a href="#" className="text-gray-400 hover:text-gray-900 font-bold uppercase text-xs tracking-widest transition-colors font-cormorant">Instagram</a>
@@ -485,7 +466,7 @@ const App: React.FC = () => {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-200 text-center md:text-left">
-           <p className="text-xs text-gray-400 font-cormorant">© 2025 品森居 Pin Sen Ju. All rights reserved. 網頁設計僅供示意。</p>
+          <p className="text-xs text-gray-400 font-cormorant">© 2025 品森居 Pin Sen Ju. All rights reserved. 網頁設計僅供示意。</p>
         </div>
       </footer>
 
@@ -535,10 +516,10 @@ const App: React.FC = () => {
               {/* Image Side */}
               <div className="w-full md:w-3/5 h-[40vh] md:h-[70vh] relative overflow-hidden bg-gray-100">
                 <AnimatePresence mode="wait">
-                  <motion.img 
+                  <motion.img
                     key={selectedFeature.id}
-                    src={selectedFeature.image} 
-                    alt={selectedFeature.title} 
+                    src={selectedFeature.image}
+                    alt={selectedFeature.title}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
@@ -559,17 +540,17 @@ const App: React.FC = () => {
                   <span className="text-green-800 font-bold tracking-[0.2em] uppercase text-xs mb-4 block font-cormorant">
                     {selectedFeature.tag}
                   </span>
-                  
+
                   <h3 className="text-4xl md:text-5xl font-zen font-medium mb-4 text-gray-900">
                     {selectedFeature.title}
                   </h3>
-                  
+
                   <p className="text-lg text-gray-400 font-light tracking-wide mb-8 uppercase font-cormorant">
                     {selectedFeature.subtitle}
                   </p>
-                  
+
                   <div className="h-px w-16 bg-gray-300 mb-8" />
-                  
+
                   <p className="text-gray-600 leading-loose text-base md:text-lg font-serif">
                     {selectedFeature.description}
                   </p>
