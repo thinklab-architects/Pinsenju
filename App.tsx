@@ -99,8 +99,6 @@ const App: React.FC = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [galleryStartIndex, setGalleryStartIndex] = useState(0);
 
-  const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
-
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -133,13 +131,6 @@ const App: React.FC = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
-
-  const handleBooking = () => {
-    setBookingStatus('sending');
-    setTimeout(() => {
-      setBookingStatus('sent');
-    }, 2000);
-  };
 
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
@@ -488,9 +479,6 @@ const App: React.FC = () => {
                 ]
               },
             ].map((plan, i) => {
-              const isSent = bookingStatus === 'sent';
-              const isSending = bookingStatus === 'sending';
-
               return (
                 <motion.div
                   key={i}
@@ -512,19 +500,14 @@ const App: React.FC = () => {
                     </ul>
                   </div>
 
-                  <button
-                    onClick={handleBooking}
-                    disabled={isSent || isSending}
-                    className={`w-full py-4 text-sm font-bold uppercase tracking-[0.2em] border border-gray-900 transition-all duration-300 mt-10
-                      ${isSent
-                        ? 'bg-green-700 text-white border-green-700 cursor-default'
-                        : isSending
-                          ? 'bg-gray-100 text-gray-400 cursor-wait'
-                          : 'bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white'
-                      }`}
+                  <a
+                    href="https://airtable.com/appOXggP5iMqw6b2k/pagDfvjwcVkEvbFYZ/form"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-4 text-sm font-bold uppercase tracking-[0.2em] border border-gray-900 transition-all duration-300 mt-10 block text-center bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white"
                   >
-                    {isSending ? '預約中...' : isSent ? '已預約' : '立即預約'}
-                  </button>
+                    立即預約
+                  </a>
                 </motion.div>
               );
             })}
